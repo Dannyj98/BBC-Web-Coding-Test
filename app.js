@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
+const cookieParser = require('cookie-parser');
+
 const port = 3000;
 
 const app = express();
@@ -25,6 +27,13 @@ helpers: {
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+// Set up cookies
+app.use(cookieParser());
+
+
+// Public
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routing
 app.use(require('./routes'));

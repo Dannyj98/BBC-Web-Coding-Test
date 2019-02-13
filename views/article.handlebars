@@ -1,33 +1,38 @@
-<h1>{{title}}</h1>
+ <article> 
+  <h1>{{title}}</h1>
 
-{{#each body}}
-  {{#isEqual this.type "heading"}}
-    <h2>{{this.model.text}}</h2>
-  {{/isEqual}}
-
-  {{#isEqual this.type "paragraph"}}
-    <p>{{this.model.text}}</p>
-  {{/isEqual}}
-
-  {{#isEqual this.type "image"}}
-    <img src="{{this.model.url}}", alt="{{this.model.altText}}" style="width:{{this.model.width}}px;height:{{this.model.height}}px;"
-  {{/isEqual}}
-
-  {{#isEqual this.type "list"}}
-    {{#isEqual this.model.type "unordered"}}
-      <ul>
-        {{#each this.model.items}}
-          <li>{{this}}</li>
-        {{/each}}
-      </ul>
+  {{#each body}}
+    {{#isEqual this.type "heading"}}
+    <div class="header">
+      <h3>{{this.model.text}}</h3>
+    </div>
     {{/isEqual}}
 
-    {{#isEqual this.model.type "ordered"}}
-      <ol>
-        {{#each this.model.items}}
-          <li>{{this}}</li>
-        {{/each}}
-      </ol>
+    {{#isEqual this.type "paragraph"}}
+    <div class="paragraph">
+      <p>{{this.model.text}}</p>
+    </div>
     {{/isEqual}}
-  {{/isEqual}}
-{{/each }}
+
+    {{#isEqual this.type "image"}}
+    <div class="image">
+      <img src="{{this.model.url}}", alt="{{this.model.altText}}" style="width:{{this.model.width}}px;height:{{this.model.height}}px;">
+    </div>
+    {{/isEqual}}
+
+    {{#isEqual this.type "list"}}
+      {{#isEqual this.model.type "unordered"}}
+      <div class="unordered-list">
+        <ul>
+          {{#each this.model.items}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      {{/isEqual}}
+    {{/isEqual}}
+  {{/each }}
+</article>
+<form action="/article/next" method="POST">
+  <button type="submit">Next</button>
+</form>
