@@ -1,0 +1,30 @@
+{
+  "numberOfRatings": 2,
+  "articles": [
+    {
+      "article": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "totalRatings": 2,
+      "average": 1
+    },
+    {
+      "article": "Praesent bibendum nec velit a fringilla. Nulla facilisi",
+      "totalRatings": 2,
+      "average": 1
+    },
+    {
+      "article": "Vestibulum posuere orci ullamcorper nisi porta, sit amet tempus nibh porta",
+      "totalRatings": 2,
+      "average": 1
+    },
+    {
+      "article": "Maecenas venenatis lorem ut erat dictum, sed varius est porta",
+      "totalRatings": 2,
+      "average": 1
+    },
+    {
+      "article": "Nulla nibh erat, pharetra at ultricies nec, tincidunt luctus arcu",
+      "totalRatings": 2,
+      "average": 1
+    }
+  ]
+}
